@@ -1,0 +1,101 @@
+
+/* home page styling */ 
+
+#catcher{
+    position:relative;
+    width: 100%;
+    height: 80%;  
+}
+
+.home_image{
+    display:block;
+    width: 100%;
+    height: auto;
+    padding:0;
+    margin:0;
+}
+
+.welcome_text{
+    position: absolute;
+    width: 100%;
+    padding-top: 25%;
+    padding-bottom: 30%;  
+    margin-top:-70%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.welcome_text p{
+    color:rgb(243, 140, 44);
+    font-size: 20px;
+    font-weight:lighter;
+    text-align: center;
+    font-style: italic;
+    font-family: 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif,Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding-top: 5px;
+    padding-bottom: 25px;
+}
+
+
+/*buttons */
+
+.button_warm{
+    border: solid 2px white;
+    background: transparent;
+    border-radius: 25px;
+    height: 40px;
+    text-decoration:none;
+    color:#fff;
+    padding:15px;
+    width: 150px;
+    font-size: 17px;
+    margin-top:10px;
+}
+.button_warm a{
+    text-decoration: none;
+    color:rgb(243, 129, 23);
+}
+
+.button_warm:hover{
+    border: solid 2px rgb(243, 129, 23);
+    cursor: pointer;
+    color: rgb(243, 129, 23);
+    text-decoration:none;
+}
+.button_warm a:visited{
+    color: #fff;
+    background: rgb(243, 129, 23);
+    border: solid 2px #fff;
+}
+
+/* primary button */
+.button_primary{
+    border: solid 2px white;
+    background-color: #fff;
+    border-radius: 25px;
+    padding:15px;
+    text-decoration:none;
+    height: 30px;
+    width: 90px;
+    font-size: 17px;
+    color: #000;
+    margin:20px;
+}
+.button_primary a{
+    text-decoration: none;
+}
+
+.button_primary:hover{
+    border: solid 2px white;
+    background: #f78d02;
+    color:#fff;
+    cursor: pointer;
+}
+.button_primary a:visited{
+    color: #f78d02;
+    background:transparent;
+}
+
+
+

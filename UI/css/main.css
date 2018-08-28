@@ -1,0 +1,145 @@
+/*all pages content styling */
+body{
+
+    padding: 0;
+    margin: 0;
+    font-size:14px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+/*all pages content layout manager*/
+.all_content{
+    width:70%;
+    margin:auto;
+
+}
+
+/*buttons */
+
+/* primary button */
+.button_primary{
+    border: solid 2px white;
+    background-color: #fff;
+    border-radius: 25px;
+    padding:15px;
+    height: 30px;
+    width: 90px;
+    font-size: 17px;
+    color: #000;
+}
+.button_primary a{
+    text-decoration: none;
+}
+
+.button_primary:hover{
+    border: solid 2px white;
+    background: transparent;
+    color:#fff;
+    cursor: pointer;
+}
+.button_primary a:visited{
+    color: #f78d02;
+    background:transparent;
+}
+/*secondary button*/
+.button_warm{
+    border: solid 2px white;
+    background: transparent;
+    border-radius: 25px;
+    height: 40px;
+    text-decoration:none;
+    color:#fff;
+    padding:15px;
+    width: 150px;
+    font-size: 17px;
+    margin-top:10px;
+}
+.button_warm a{
+    text-decoration: none;
+    color:rgb(243, 129, 23);
+}
+
+.button_warm:hover{
+    border: solid 2px rgb(243, 129, 23);
+    cursor: pointer;
+    color: rgb(243, 129, 23);
+    text-decoration:none;
+}
+.button_warm a:visited{
+    color: #fff;
+    background:transparent;
+}
+/* button inside the page navbar */
+.button_info{
+    border: 1px;
+    border-radius:5px;
+    margin-right:8px;
+
+}
+.button_info:hover{
+    color:#fff;
+    border: none;
+    height: 40px;
+    width: 150px;
+    background:rgb(243, 129, 23);
+}
+
+.button_user:hover{
+    border: solid 1px #1c8adb;
+    border-radius: 5px;
+    color:#fff;
+    background: #025008;
+}
+
+/*button book/reserve */
+.button_success{
+    border: solid 2px #7b9d62;
+    background:#7b9d62;
+    border-radius: 25px;
+    padding:10px;
+    height: 40px;
+    font-size: 17px;
+    color: #fff;
+    text-decoration:none;
+}
+.button_success a{
+    text-decoration: none;
+}
+
+.button_success:hover{
+    background: #000;
+    color: #7b7b7b;
+    cursor: pointer;
+}
+.button_success a:visited{
+    color: #ffffff;
+    background-color: #7b7b7b;
+}
+#button_page_center{
+    text-align:center;
+}
+
+
+.button_create{
+    border: solid 2px #fff;
+    background:#00ad5f;
+    border-radius: 25px;
+    padding:8px;
+    width: 120px;
+    font-size: 17px;
+    color: #fff;
+    text-decoration:none;
+}
+
+.button_create:hover{
+    background:  #222222;
+    color: #fff;
+    cursor: pointer;
+}
+.button_create:visited{
+    color: #ffffff;
+    background-color: #00ad5f;
+}
+
+/*end of buttons */
