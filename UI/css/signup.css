@@ -1,19 +1,5 @@
 /* signup css */
-.container{
-    background-image: url(../images/signup.jpg);
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    background-attachment: fixed;
-}
-.container2{
-    background-image: url(../images/food_list.jpg);
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    background-attachment: fixed;
 
-}
 
 /* sign up form styling */
 

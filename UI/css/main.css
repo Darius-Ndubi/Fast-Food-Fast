@@ -10,11 +10,35 @@ body{
 
 /*all pages content layout manager*/
 .all_content{
-    width:70%;
+    width:80%;
     margin:auto;
 
 }
+/* section styling*/
+.container{
+    background-image: url(../images/signup.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
 
+.container2{
+    background-image: url(../images/food_list.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+
+}
+.container3{
+    background-image: url(../images/coffess.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+
+}
 /*buttons */
 
 /* primary button */
@@ -139,7 +163,17 @@ body{
 }
 .button_create:visited{
     color: #ffffff;
-    background-color: #00ad5f;
+    background-color: #ee1000;
 }
 
 /*end of buttons */
+#titling{
+    color:#ee1000;
+    margin-bottom:-5%;
+    margin-left:13%; 
+    border-radius:10px;
+    padding:5px;
+    width:16%;
+    background:rgba(0, 0, 0, 0.897);
+    border: solid 2px #fff;
+}

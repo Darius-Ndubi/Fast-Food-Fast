@@ -6,26 +6,26 @@ table{
     margin-bottom: 30px;
     font-size:15px;
     padding-top: 5%;
-    padding-left: 10%;
+    width:60%;
+    margin-left:auto; 
+    margin-right:auto;
 }
+
 table tr th{
     font-size: 15px;
     color:#fff;
-    line-height: 1.5;
-    padding:16px;
+    padding:10px;
     margin: 20px;
     text-transform: uppercase;
     background-color: #f78d02;
 }
 table tr td{
     font-size:15px;
-    color:  #f78d02;
-    line-height: 1.5;
+    color: #f78d02;
     background-color: rgba(0, 0, 0, 0.897);
-    padding-top:7px;
-    padding-bottom:7px;
-    padding-right: 10px;
-
+    padding-bottom:0px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 table tr td:hover {

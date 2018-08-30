@@ -1,0 +1,31 @@
+/*Profile page */
+#profile{
+    position: relative;
+    text-align: center;
+    margin-bottom: 50px;
+}
+#prof_dits{
+    padding:5px;
+    background-color:rgba(36, 35, 35, 0.637);
+}
+
+#prof_img{
+    max-width:250px;
+    max-height:250px;
+    border-radius: 50%;
+}
+
+#profile h1 em, #profile form label,#profile form input{
+    font-size: 18px;
+    color:rgb(209, 209, 209);
+}
+#profile form input{
+    color: #808080;
+    background-color: #222222;
+    padding:10px;
+    border:none;
+}
+
+#prof_dits p a{
+    margin-left:9%;
+}

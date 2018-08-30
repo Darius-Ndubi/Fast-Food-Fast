@@ -23,11 +23,8 @@
                 <a href="view_foods.html">
                     <li>FOOD</li>
                 </a>
-                <a href="add_food.html">
-                    <li>ADD FOOD</li>
-                </a>
                 <a href="signin.html">
-                    <li>SIGN IN</li>
+                    <li>SIGN OUT</li>
                 </a>
             </ul>
         </nav>
@@ -38,8 +35,9 @@
                 <th>Picture</th>
                 <th>Title</th>
                 <th>Description</th>
-                <th>Price (Kshs)</th>
-                <th>Type</th>  
+                <th>Price</th>
+                <th>Type</th>
+                <th>Quantity</th>  
                 <th>Action</th>                     
             </tr>
     
@@ -49,9 +47,12 @@
                 <td>Sweater than the Kruby Paddy </td>
                 <td>450</td>
                 <td>Snack</td>
+                <td>
+                    <input type="number" size="6" name="price" required min="1" max="" value="0">
+                </td>
                 
                 <td>
-                    <a class="button_create">Book</a>
+                    <a class="button_create">Order</a>
                 </td>
                 
             </tr>
@@ -62,9 +63,11 @@
                 <td>Will make you feel like you eating manna</td>
                 <td>550</td>
                 <td>Snack/Meal</td>
-                
                 <td>
-                    <a class="button_create">Book</a>
+                        <input type="number" size="6" name="price" required min="1" max="" value="0">
+                </td>
+                <td>
+                    <a class="button_create">Order</a>
                 </td>
                    
             </tr>
@@ -72,11 +75,14 @@
             <tr>
                 <td><img src="./images/pizza.jpg"></td>
                 <td>Pizza</td>
-                <td>Italian cuisine you will nevwe get tired of</td>
+                <td>Italian cuisine you will never get tired of</td>
                 <td>600</td>
                 <td>Snack</td> 
                 <td>
-                    <a class="button_create">Book</a>
+                        <input type="number" size="6" name="price" required min="1" max="" value="0">
+                </td>
+                <td>
+                    <a class="button_create">Order</a>
                 </td>   
             </tr>
 
@@ -87,13 +93,29 @@
                 <td>400</td>
                 <td>Meal</td> 
                 <td>
-                    <a class="button_create">Book</a>
+                        <input type="number" size="6" name="price" required min="1" max="" value="0">
+                </td>
+                <td>
+                    <a class="button_create">Order</a>
                 </td>   
             </tr>
         </table>
 
     
     </section>
+
+    <!--page Footer-->
+    <footer>
+            <ul>
+                <li>
+                    Contact US
+                </li>
+                <li>
+                    2018 &copy; Fast Foods
+                </li>
+            </ul>
+        </footer>
+        
     
 </body>
 </html>
