@@ -155,12 +155,12 @@ form_content{
     }
     .register button{
         font-size:8px;
-        padding: 10px;
+        padding: 8px;
         margin:5px
     }
-    .register .more_linkd{
+    .register, .more_linkd{
         font-size:8px;
-        margin:5px;
+        padding:8px;
     }
     .register .more_link{
         font-size:8px;
