@@ -14,4 +14,38 @@ footer {
 footer ul{
     padding-top:2%;
 }
+footer ul li{
+    display: inline;
+    margin:30px;
+    text-decoration: none;
+}
+
+/*using media queries to make the page responsive*/
+/* Tablet Landscape */
+@media screen and (max-width: 1060px) {
+    #primary { width:67%; }
+    #secondary { width:30%; margin-left:3%;}  
+}
+
+
+/* Tablet Portrait */
+@media screen and (max-width: 768px) {
+    #primary { width:100%; }
+    #secondary { width:100%; margin:0; border:none; }
+    
+    /*footer*/
+    footer{
+        position: fixed;
+        text-align:center;
+
+    }
+    footer li{
+        float:none;
+        margin-left:-50px;
+    }
+    footer p{
+        float:none;
+        margin-left:30px
+    }
+}
 

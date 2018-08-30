@@ -9,6 +9,7 @@ header{
     font-size:18px;
     color: #f3f3f3;
     text-align: center;
+    margin-top: -18px;
 }
 header img{
     width: 10%;
@@ -18,12 +19,36 @@ header img{
 header a{
     text-decoration: none;
     color:#f3f3f3;
-}
-
-li{
     padding-right: 70px;
     padding-left: 70px;
     display:inline;
     text-decoration: none;
     font-weight: lighter;
+}
+
+/*using media queries to make the page responsive*/
+/* Tablet Landscape */
+@media screen and (max-width: 1060px) {
+    #primary { width:67%; }
+    #secondary { width:30%; margin-left:3%;}  
+}
+
+
+/* Tablet Portrait */
+@media screen and (max-width: 768px) {
+    #primary { width:100%; }
+    #secondary { width:100%; margin:0; border:none; }
+    /* header resize */
+    
+    header a{
+        font-size:10px;
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-top:-30px;
+    }
+    header img{
+        margin-top: 20px;
+        width: 20%;
+        height: 20%; 
+    }
 }

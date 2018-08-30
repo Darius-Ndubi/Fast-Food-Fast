@@ -40,3 +40,34 @@ table tr td img{
     width: 100px;
 }
 
+/*using media queries to make the page responsive*/
+/* Tablet Landscape */
+@media screen and (max-width: 1060px) {
+    #primary { width:67%; }
+    #secondary { width:30%; margin-left:3%;}  
+}
+
+
+/* Tablet Portrait */
+@media screen and (max-width: 768px) {
+    #primary { width:100%; }
+    #secondary { width:100%; margin:0; border:none; }
+    
+    table tr th{
+        font-size:7px;
+        line-height: 1;
+        padding-top:8px;
+        padding-bottom: 8px;
+    }
+    table tr td{
+        font-size:7px;
+        line-height:1;
+        padding-right:5px;
+ 
+    }
+    table tr td img{
+        height: 50px;
+        width: 50px;
+    }
+}
+

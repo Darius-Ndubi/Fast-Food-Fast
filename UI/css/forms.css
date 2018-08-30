@@ -98,7 +98,7 @@ form_content{
     background:transparent;
     font-size:14px;
 }
-.more_linkd,.more_linkred{
+.more_linkd, .more_linkred{
     border: none;
     padding: 15px;
     font-size:16px;
@@ -122,4 +122,48 @@ form_content{
     margin: 8px 70px;
 }
 
+/* Tablet Portrait */
+@media screen and (max-width: 768px) {
+    #primary { width:100%; }
+    #secondary { width:100%; margin:0; border:none; }
 
+    .form_content{
+        width: 80%;
+        font-size: 8px;
+        margin:auto;
+    }
+    .avatar{
+        display:none;
+    }
+    .register .white_box{
+        width:100%;
+        padding:20px 26px;
+    }
+    .register h1{
+        font-size:10px;
+        margin:6px;
+    }
+    .register input{
+        font-size:8px;
+        width:95%;
+        padding: 6px 9px;
+    }
+    
+    .user_dits label{
+        font-size:8px;
+        margin: 4px 40px;
+    }
+    .register button{
+        font-size:8px;
+        padding: 10px;
+        margin:5px
+    }
+    .register .more_linkd{
+        font-size:8px;
+        margin:5px;
+    }
+    .register .more_link{
+        font-size:8px;
+        padding: 5px 8px;
+    }
+}
