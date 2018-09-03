@@ -1,0 +1,41 @@
+/* footer styling */
+
+footer {
+    left: 0;
+    bottom: 0;
+    font-size: 18px;
+    width: 100%;
+    background-color: #000000a8;
+    color: #f78d02;
+    text-align: center;
+    height:10%;
+}
+
+footer ul{
+    padding-top:2%;
+}
+footer ul li{
+    display: inline;
+    margin:30px;
+    text-decoration: none;
+}
+
+/*using media queries to make the page responsive*/
+/* Tablet Landscape */
+@media screen and (max-width: 1060px) {
+    #primary { width:67%; }
+    #secondary { width:30%; margin-left:3%;}  
+}
+
+
+/* Tablet Portrait */
+@media screen and (max-width: 768px) {
+    #primary { width:100%; }
+    #secondary { width:100%; margin:0; border:none; }
+    
+    /*footer*/
+    footer{
+        font-size:8px;
+    }
+}
+

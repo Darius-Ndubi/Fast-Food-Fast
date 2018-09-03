@@ -1,0 +1,73 @@
+/*table styles */
+table{
+    box-sizing: border-box;
+    border-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size:15px;
+    padding-top: 5%;
+    width:70%;
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+table tr th{
+    font-size: 15px;
+    color:#fff;
+    padding:10px;
+    margin: 20px;
+    text-transform: uppercase;
+    background-color: #f78d02;
+}
+table tr td{
+    font-size:15px;
+    color: #f78d02;
+    background-color: rgba(0, 0, 0, 0.897);
+    padding-bottom:0px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+table tr td:hover {
+    background-color: rgba(0, 0, 0, 0.473);
+    color: #fff;
+}
+
+table tr td img{
+    padding-left: 5px;
+    border-radius:50%;
+    height: 100px;
+    width: 100px;
+}
+
+/*using media queries to make the page responsive*/
+/* Tablet Landscape */
+@media screen and (max-width: 1060px) {
+    #primary { width:67%; }
+    #secondary { width:30%; margin-left:3%;}  
+}
+
+
+/* Tablet Portrait */
+@media screen and (max-width: 768px) {
+    #primary { width:100%; }
+    #secondary { width:100%; margin:0; border:none; }
+    
+    table tr th{
+        font-size:7px;
+        line-height: 1;
+        padding-top:8px;
+        padding-bottom: 8px;
+    }
+    table tr td{
+        font-size:7px;
+        line-height:1;
+        padding-right:5px;
+ 
+    }
+    table tr td img{
+        height: 50px;
+        width: 50px;
+    }
+}
+

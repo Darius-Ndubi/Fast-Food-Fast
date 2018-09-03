@@ -1,0 +1,169 @@
+/* signup css */
+
+
+/* sign up form styling */
+
+form_content{
+    width: 100%;
+    margin: 60px auto;
+    font: bold 14px ;
+    text-align: center;
+
+}
+
+.register{
+    width:100%;
+    position: relative;
+    display: inline-block;
+    text-align: left;
+}
+
+.avatar{
+    width: 30%;
+    height: 30%;
+    margin-left: 40%;
+
+}
+
+.register .white_box{
+    width: 60%;
+    color: #ffffff;
+    background: rgba(26, 25, 25, 0.527);
+    box-sizing: border-box;
+    border:solid 1px #fff;
+    padding: 60px 80px;
+    margin-bottom: 35px;
+    margin: 35px auto;
+    box-shadow: 50px rgb(252, 252, 252);
+}
+
+.register h1{
+    text-align: center;
+    font-size: 20px;
+    padding: 0 20px 15px;
+}
+
+
+.register input{
+    color:  #5f5f5f;
+    width: 70%;
+    box-sizing: border-box;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.1);
+    padding: 12px 18px;
+    border: 1px solid #dbdbdb;
+    margin-bottom: 15px;
+
+}
+/* center place holder text in the forms */
+::-webkit-input-placeholder {
+   text-align: center;
+}
+/*forms visual validation makers*/
+/*invalid input thumbs down*/
+.register input:required:invalid, input:focus:invalid{
+    background-image: url(../images/invalid.png);
+    background-repeat: no-repeat;
+    background-position:right center;
+}
+/*Valid input thumbs up*/
+.register input:required:valid, input:focus:valid{
+    background-image: url(../images/valid.png);
+    background-position: right center;
+    background-repeat:no-repeat;
+}
+
+.register button{
+    border: none;
+    outline: none;
+    padding: 15px;
+    margin:8px;
+    background: #0634ff;
+    color:#fff;
+    text-align: center;
+    text-decoration:none;
+}
+.register button:hover,register button a:hover{
+    cursor:pointer;
+}
+.register button a:visited{
+    color:#ffffff;
+    border: solid 1px #0634ff;
+    text-decoration:none;
+}
+/* More info links at the end of the forms reset pass and login direct*/
+.register .more_link{
+    padding: 10px 16px;
+    font-weight: normal;
+    color: #fff;
+    background:transparent;
+    font-size:14px;
+}
+.more_linkd, .more_linkred{
+    border: none;
+    padding: 15px;
+    font-size:16px;
+    margin:8px;
+    background: #0634ff;
+    color:#fff;
+    text-align: center;
+    text-decoration:none;
+}
+.more_linkred{
+    background-color: rgba(224, 13, 13, 0.945);
+    color: #fff;
+}
+
+.user_dits{
+    text-align: center;
+}
+
+.user_dits label{
+    display:inline-block;
+    margin: 8px 70px;
+}
+
+/* Tablet Portrait */
+@media screen and (max-width: 768px) {
+    #primary { width:100%; }
+    #secondary { width:100%; margin:0; border:none; }
+
+    .form_content{
+        width: 80%;
+        font-size: 8px;
+        margin:auto;
+    }
+    .avatar{
+        display:none;
+    }
+    .register .white_box{
+        width:100%;
+        padding:20px 26px;
+    }
+    .register h1{
+        font-size:10px;
+        margin:6px;
+    }
+    .register input{
+        font-size:8px;
+        width:95%;
+        padding: 6px 9px;
+    }
+    
+    .user_dits label{
+        font-size:8px;
+        margin: 4px 40px;
+    }
+    .register button{
+        font-size:8px;
+        padding: 8px;
+        margin:5px
+    }
+    .register, .more_linkd{
+        font-size:8px;
+        padding:8px;
+    }
+    .register .more_link{
+        font-size:8px;
+        padding: 5px 8px;
+    }
+}

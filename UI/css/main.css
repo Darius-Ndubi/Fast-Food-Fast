@@ -1,0 +1,276 @@
+/*all pages content styling */
+body{
+
+    padding: 0;
+    margin: 0;
+    font-size:14px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+/*all pages content layout manager*/
+.all_content{
+    width:80%;
+    margin:auto;
+
+}
+/* section styling*/
+.container{
+    background-image: url(../images/signup.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.container2{
+    background-image: url(../images/food_list.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+
+}
+.container3{
+    background-image: url(../images/coffess.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+
+}
+/*buttons */
+
+/* primary button */
+.button_primary{
+    border: solid 2px white;
+    background-color: rgb(243, 140, 44);
+    border-radius: 25px;
+    padding:15px;
+    height: 30px;
+    width: 90px;
+    font-size: 17px;
+    color: #000;
+}
+.button_primary a{
+    text-decoration: none;
+}
+
+.button_primary:hover{
+    border: solid 2px white;
+    background: transparent;
+    color:#fff;
+    cursor: pointer;
+}
+.button_primary a:visited{
+    color: #f78d02;
+    background:transparent;
+}
+/*secondary button*/
+.button_warm{
+    border: solid 2px white;
+    background: transparent;
+    border-radius: 25px;
+    height: 40px;
+    text-decoration:none;
+    color:#fff;
+    padding:15px;
+    width: 150px;
+    font-size: 17px;
+    margin-top:10px;
+}
+.button_warm a{
+    text-decoration: none;
+    color:rgb(243, 129, 23);
+}
+
+.button_warm:hover{
+    border: solid 2px rgb(243, 129, 23);
+    cursor: pointer;
+    color: rgb(243, 129, 23);
+    text-decoration:none;
+}
+.button_warm a:visited{
+    color: #fff;
+    background:transparent;
+}
+/* button inside the page navbar */
+.button_info{
+    border: 1px;
+    border-radius:5px;
+    margin-right:8px;
+
+}
+.button_info:hover{
+    color:#fff;
+    border: none;
+    height: 40px;
+    width: 150px;
+    background:rgb(243, 129, 23);
+}
+
+.button_user:hover{
+    border: solid 1px #1c8adb;
+    border-radius: 5px;
+    color:#fff;
+    background: #025008;
+}
+
+/*button book/reserve */
+.button_success{
+    border: solid 2px #7b9d62;
+    background:#7b9d62;
+    border-radius: 25px;
+    padding:10px;
+    height: 40px;
+    font-size: 17px;
+    color: #fff;
+    text-decoration:none;
+}
+.button_success a{
+    text-decoration: none;
+}
+
+.button_success:hover{
+    background: #000;
+    color: #7b7b7b;
+    cursor: pointer;
+}
+.button_success a:visited{
+    color: #ffffff;
+    background-color: #7b7b7b;
+}
+#button_page_center{
+    text-align:center;
+}
+
+
+.button_create{
+    border: solid 2px #fff;
+    background: #ee1000;
+    border-radius: 25px;
+    padding:8px;
+    width: 120px;
+    font-size: 17px;
+    color: #fff;
+    text-decoration:none;
+}
+
+.button_create:hover{
+    background:  #f78d02;
+    color: #fff;
+    cursor: pointer;
+}
+.button_create:visited{
+    color: #ffffff;
+    background-color: #ee1000;
+}
+
+/*end of buttons */
+#titling{
+    color:#ee1000;
+    margin-bottom:-5%;
+    margin-left:13%; 
+    border-radius:10px;
+    padding:5px;
+    width:16%;
+    background:rgba(0, 0, 0, 0.897);
+    border: solid 2px #fff;
+}
+
+
+/* home page styling */ 
+
+#catcher{
+    position:relative;
+    width: 100%;
+    height: 80%;  
+}
+
+.home_image{
+    display:block;
+    width: 100%;
+    height: auto;
+    padding:0;
+    margin:0;
+}
+
+.welcome_text{
+    position: absolute;
+    width: 100%;
+    padding-top: 25%;
+    padding-bottom: 15%;  
+    margin-top:-70%;
+    background-color: rgba(0, 0, 0, 0.616);
+}
+.welcome_text img{
+    width: 30%;
+    height: 30%;
+    margin-left:33%;
+    margin-top:-10%;
+}
+.welcome_text p{
+    color:rgb(243, 140, 44);
+    font-size: 20px;
+    font-weight:lighter;
+    text-align: center;
+    font-style: italic;
+    font-family: 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif,Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /* background-color: rgba(0, 0, 0, 0.8); */
+    padding-top: 5px;
+    padding-bottom: 25px;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0)
+}
+
+/*home page link styles*/
+.welcome_text p a{
+    text-decoration: none;
+    margin:2%;
+}
+
+
+/*using media queries to make the page responsive*/
+/* Tablet Landscape */
+@media screen and (max-width: 1060px) {
+    #primary { width:67%; }
+    #secondary { width:30%; margin-left:3%;}  
+}
+
+
+/* Tablet Portrait */
+@media screen and (max-width: 768px) {
+    #primary { width:100%; }
+    #secondary { width:100%; margin:0; border:none; }
+
+    body{
+        font-size:8px;
+    }
+    .welcome_text{
+        padding-bottom: 35px;
+    }
+    .welcome_text img{
+        width:20%;
+        height:20%;
+        margin-left:40%; 
+    }
+    .welcome_text p{
+        font-size: 6px;
+    }
+    .welcome_text p a{
+        border: solid 0.5px #fff;
+        font-size: 6px;
+        padding:4px;
+    }
+    /* end of home page*/
+
+    #titling{
+        font-size: 6px;
+        border: solid .5px #fff;
+        width:20%;
+    }
+    
+
+}
+

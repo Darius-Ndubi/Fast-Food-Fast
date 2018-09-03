@@ -1,0 +1,65 @@
+/*Profile page */
+#profile{
+    position: relative;
+    text-align: center;
+    margin-bottom: 50px;
+}
+#prof_dits{
+    padding:5px;
+    background-color:rgba(36, 35, 35, 0.637);
+}
+
+#prof_img{
+    max-width:250px;
+    max-height:250px;
+    border-radius: 50%;
+}
+
+#profile h1 em, #profile form label,#profile form input{
+    font-size: 18px;
+    color:rgb(209, 209, 209);
+}
+#profile form input{
+    color: #808080;
+    background-color: #222222;
+    padding:10px;
+    border:none;
+}
+
+#prof_dits p a{
+    margin-left:9%;
+}
+
+
+/*using media queries to make the page responsive*/
+/* Tablet Landscape */
+@media screen and (max-width: 1060px) {
+    #primary { width:67%; }
+    #secondary { width:30%; margin-left:3%;}  
+}
+
+
+/* Tablet Portrait */
+@media screen and (max-width: 768px) {
+    #primary { width:100%; }
+    #secondary { width:100%; margin:0; border:none; }
+
+    #prof_img{
+        max-width:100px;
+        max-height:100px;
+        border-radius: 50%;
+    }
+
+    #profile h1 em, #profile form label,#profile form input{
+        font-size: 8px;
+        
+    }
+    .button_create{
+        border: solid 0.5px #fff;
+        font-size: 6px;
+        padding:5px;
+    }
+    #prof_dits p a{
+        margin-left:4%;
+    }
+}
