@@ -64,6 +64,7 @@ class ManageUsersDAO(object):
         Steps:
             -> Validated user input to be of expected standards
             -> Check if email of the user exists in the list of registered users
+            -> check if user is already signed in
             -> Hash the entered password and verify it matches stored hash
             -> if password hash match add users username to logged in list of users
             -> if email is not found error out that user is not signed up
@@ -80,6 +81,11 @@ class ManageUsersDAO(object):
             for user in self.users:
                 if user.get('email') == data['email']:
                     user=user
+
+            #block repeated signins from the same user
+            for i in self.logged_users:
+                if i ==user['username']:
+                    api.abort(409, "You: {} are already logged in".format(data['email']))
 
            #check if the created hash and stored hash match
             if check_password_hash(user.get('password'),data['password']):
