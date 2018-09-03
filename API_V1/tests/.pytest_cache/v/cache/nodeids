@@ -9,5 +9,12 @@
   "test_user_auth.py::test_signup_int_username",
   "test_user_auth.py::test_signup_empty_username",
   "test_user_auth.py::test_signup_spaces_username",
-  "test_user_auth.py::test_signup_correct_data"
+  "test_user_auth.py::test_signup_correct_data",
+  "test_user_auth.py::test_signin_int_email",
+  "test_user_auth.py::test_signin_empty_email",
+  "test_user_auth.py::test_signin_wrong_email1",
+  "test_user_auth.py::test_signin_wrong_email2",
+  "test_user_auth.py::test_signin_int_password",
+  "test_user_auth.py::test_signin_poor_password",
+  "test_user_auth.py::test_signin_correct_data"
 ]
