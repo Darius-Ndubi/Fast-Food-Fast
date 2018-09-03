@@ -1,0 +1,13 @@
+[
+  "test_user_auth.py::test_signup_empty_email",
+  "test_user_auth.py::test_signup_wrong_email1",
+  "test_user_auth.py::test_signup_wrong_email2",
+  "test_user_auth.py::test_signup_int_email",
+  "test_user_auth.py::test_signup_int_password",
+  "test_user_auth.py::test_signup_passwords_unmatching",
+  "test_user_auth.py::test_signup_poor_passwords",
+  "test_user_auth.py::test_signup_int_username",
+  "test_user_auth.py::test_signup_empty_username",
+  "test_user_auth.py::test_signup_spaces_username",
+  "test_user_auth.py::test_signup_correct_data"
+]
