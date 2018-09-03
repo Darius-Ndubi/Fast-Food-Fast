@@ -1,1 +1,3 @@
-{}
+{
+  "test_user_auth.py::test_signin_correct_data": true
+}

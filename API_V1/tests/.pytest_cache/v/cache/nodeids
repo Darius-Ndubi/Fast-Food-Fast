@@ -16,5 +16,5 @@
   "test_user_auth.py::test_signin_wrong_email2",
   "test_user_auth.py::test_signin_int_password",
   "test_user_auth.py::test_signin_poor_password",
-  "test_user_auth.py::test_signin_correct_data"
+  "test_user_orders.py::test_orders_retrival"
 ]
