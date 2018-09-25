@@ -3,7 +3,7 @@
 
 /* sign up form styling */
 
-form_content{
+.form_content{
     width: 100%;
     margin: 60px auto;
     font: bold 14px ;
@@ -12,7 +12,6 @@ form_content{
 }
 
 .register{
-    width:100%;
     position: relative;
     display: inline-block;
     text-align: left;
