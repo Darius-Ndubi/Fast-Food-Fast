@@ -39,3 +39,37 @@ function usersignup(e) {
     .addEventListener("click", usersignup);
   
   
+
+    function userlogin(e) {
+      e.preventDefault();
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("psswd").value;
+    
+      var data = {
+        email: email,
+        password: password
+      };
+    
+      fetch("https://fastfoodfastapi.herokuapp.com/api/v2/auth/login", {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-type": "application/json;"
+        },
+        body: JSON.stringify(data)
+      })
+        .then(res => res.json())
+        
+        .then(res =>  {
+          //store user token in session
+          sessionStorage.setItem('token', res.Token)
+          alert(JSON.stringify(res.message))
+          //console.log(sessionStorage.getItem('token'))
+      });
+
+    };
+    
+    var sign_in = document
+    .querySelector(".signup")
+    //   Add click listener. When the signup button is clicked, userlogin is called
+    .addEventListener("click", userlogin);
