@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/header.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/forms.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/footer.css" />
+    
 </head>
 <body class="container3">
         <header>
@@ -45,21 +46,21 @@
                         <div class="user_dits">
     
                             <label>Email</label>
-                            <input type="email" name="email" required placeholder="Enter your email Address">
+                            <input id="email" type="email" name="email" required placeholder="Enter your email Address">
     
     
                             <label>Username</label>
-                            <input type="text" name="username" required placeholder="Choose a username">
+                            <input id='uname' type="text" name="username" required placeholder="Choose a username">
     
     
                             <label>Password</label>
-                            <input type="password" name="password" required placeholder="Enter your password">
+                            <input id='psswd' type="password" name="password" required placeholder="Enter your password">
                         
                             <label>Confirm Password</label>
-                            <input type="password" name="confirm_password" required placeholder="Re Enter your password">
+                            <input id="cpsswd" type="password" name="confirm_password" required placeholder="Re Enter your password">
                         </div>
                         <div id="button_page_center">
-                            <button type="submit">Sign Up</button>
+                            <button class="signup" type="submit">Sign Up</button>
                             <br>
                             <br>
                             <a href="signin.html" class="more_link">Already have an account?</a>
@@ -83,6 +84,6 @@
                 </li>
             </ul>
         </footer>
-        
+        <script src="js/auth.js" ></script>
     </body>
 </html>

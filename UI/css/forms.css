@@ -15,6 +15,7 @@
     position: relative;
     display: inline-block;
     text-align: left;
+    width: 80%;
 }
 
 .avatar{
