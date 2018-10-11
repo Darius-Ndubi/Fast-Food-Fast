@@ -45,22 +45,22 @@
                         <div class="user_dits">
 
                             <label>Title</label>
-                            <input type="text" name="title" required placeholder="Name your dish.">
+                            <input id='title' type="text" name="title" required placeholder="Name your dish.">
                         
                             <label>Description</label>
-                            <input type="text" required placeholder="Give a brief description on the item">
+                            <input id='descri' type="text" required placeholder="Give a brief description on the item">
                             
                             <label>Price:</label>
-                            <input type="number" size="6" name="price" required min="1" max="" value="0">
+                            <input id='price' type="number" size="6" name="price" required min="1" max="" value="0">
     
                             <label>Type</label>
-                            <input type="text" required placeholder="What type of meal is it">
+                            <input id='type' type="text" required placeholder="What type of meal is it">
                             
                             <br>
                             <br>
                             <br>
-                            <a href="view_foods.html" class="button_create">Add Item</a>
-
+                            <!-- <a href="view_foods.html" class="button_create">Add Item</a> -->
+                            <button class="add_food button_create" type="submit">Add Item</button>
                         </div>
                     </div>
                 </div>
@@ -79,6 +79,6 @@
             </ul>
         </footer>
         
-        
+    <script src="js/food.js"></script>
     </body>
 </html>
