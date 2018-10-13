@@ -42,7 +42,7 @@
         <div id="profile">
             <div id="prof_dits">
                 <img src="images/user_profile.jpg" alt="Profile_default" id="prof_img" >
-                <h1>
+                <!-- <h1>
                     <em>
                         Yagami Light
                     </em>
@@ -54,8 +54,8 @@
                     <input type="email" name="email" placeholder="yagamilight@gmail.com">
                     <br>
                 </form>
-                <br>
-                <hr>
+                 <br> -->
+                <hr> 
                 <p>
                     <a href="view_foods.html" class="button_create">ORDER MORE</a>
                 </p>
@@ -64,66 +64,20 @@
                 <table>
                         <h2 id='titling'>Your Orders</h2>
                     <tr>
+                        <th>Id</th>
+                        <th>Food_id</th>
                         <th>Title</th>
                         <th>Price</th>
                         <th>Quantity</th>
-                        <th>STATUS</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Creator</th>
                     </tr>
-                
-                    <tr>
-                        <td>Pizza</td>
-                        <td>600</td>
-                        <td>4</td>
-                        <td>PENDING</td>
-                    </tr>
-                    <tr>
-                        <td>Fish</td>
-                        <td>400</td>
-                        <td>5</td>
-                        <td>PENDING</td>
-                    </tr>
-                
-                    <tr>
-                        <td>Burger</td>
-                        <td>450</td>
-                        <td>2</td>
-                        <td>PENDING</td>
-                    </tr>
-                </table>
+                    <tbody id="tbody">
 
-                <table>
-                    <h2 id='titling'>Previous Orders</h2>
-                    <tr>
-                        <th>Title</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>STATUS</th>
-                        <th>ACTION</th>
-                    </tr>
-                    <tr>
-                        <td>Chrispy Fried Chicken</td>
-                        <td>550</td>
-                        <td>1</td>
-                        <td>ACCEPTED</td> 
-                        <td>COMPLETED</td>                       
-                    </tr>
-                
-                    <tr>
-                        <td>Pizza</td>
-                        <td>1200</td>
-                        <td>4</td>
-                        <td>DECLINED</td>
-                        <td>--------</td>
-                    </tr>
-
-                    <tr>
-                        <td>Burger</td>
-                        <td>900</td>
-                        <td>2</td>
-                        <td>ACCEPTED</td>
-                        <td>COMPLETED</td> 
-                    </tr>
+                    </tbody>
                 </table>
+            </div>
         </div>
         
     </section>
@@ -139,6 +93,6 @@
             </li>
         </ul>
     </footer>
-    
+    <script src="js/user_profiler.js"></script>
 </body>
 </html>

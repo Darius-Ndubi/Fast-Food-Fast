@@ -61,7 +61,7 @@ function createOrder() {
 	list_quantity.push(Number(quantity));
 	list_food_id.push(Number(food_id));
 
-	console.log(list_quantity)
+	//console.log(list_quantity)
     var data = {
         quantity:list_quantity,
         food_id:list_food_id
@@ -73,7 +73,7 @@ function createOrder() {
 		mode: "cors",
 		headers: {
 		  "Content-type": "application/json;",
-		  Authorization: "Bearer " + sessionStorage.getItem("token")
+		  "Authorization": "Bearer " + sessionStorage.getItem("token")
 		},
 		body: JSON.stringify(data)
 	})
