@@ -150,7 +150,7 @@ body{
     background: #ee1000;
     border-radius: 25px;
     padding:8px;
-    width: 120px;
+    /* width: 120px; */
     font-size: 17px;
     color: #fff;
     text-decoration:none;
