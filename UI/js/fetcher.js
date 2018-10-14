@@ -5,7 +5,7 @@ function getMenu(e) {
     method: "GET",
     mode: "cors",
     headers: {
-      "Content-type": "application/json;"
+      "Content-type": "application/json"
     }
   })
     .then(res => res.json())
@@ -72,7 +72,7 @@ function createOrder() {
 		method: "POST",
 		mode: "cors",
 		headers: {
-		  "Content-type": "application/json;",
+		  "Content-type": "application/json",
 		  "Authorization": "Bearer " + sessionStorage.getItem("token")
 		},
 		body: JSON.stringify(data)
