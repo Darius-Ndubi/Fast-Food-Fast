@@ -48,12 +48,12 @@
                         </em>
                     </h1>
                 
-                    <form method="">
+                    <!-- <form method="">
                         <label>Email</label>
                         <br>
                         <input type="email" name="email" placeholder="crustykrabs@gmail.com">
                         <br>
-                    </form>
+                    </form> -->
                     <br>
                     <hr>
                     
@@ -70,114 +70,18 @@
         <table>
             <h2 id='titling'>Customer Orders</h2>
             <tr>
+                <th>Id</th>
+                <th>Food_id</th>
                 <th>Title</th>
-                <th>Name</th>
-                <th>Price</th>
+                <th>price</th>
                 <th>Quantity</th>
-                <th>ACTION</th>
-                <th>STATUS</th>
-                <th></th>                    
+                <th>Total</th>
+                <th>Status</th>
+                <th>User</th>                   
             </tr>
-    
-            <tr>
-                <td>Burger</td>
-                <td>Plankton</td>
-                <td>450</td>
-                <td>4</td>
-                <form method="POST">
-                    <td>
-                        <select>
-                            <option value="accept">ACCEPTED</option>
-                            <option value="reject">REJECTED</option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option value="undone">-----</option>
-                            <option value="complete">COMPLETE</option>
-                        </select>
-                    </td>
-                    <td>
-                        <button class="button_create" type="submit">Send
-                        </button>
-                    </td>
-                </form>                        
-            </tr>
-    
-            <tr>
-                <td>Chrispy Fried Chicken</td>
-                <td>Gary</td>
-                <td>550</td>
-                <td>1</td>
-                <form method="POST">
-                    <td>
-                        <select>
-                            <option value="accept">ACCEPTED</option>
-                            <option value="reject">REJECTED</option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option value="undone">-----</option>
-                            <option value="complete">COMPLETE</option>
-                        </select>
-                    </td>
-                    <td>
-                        <button class="button_create" type="submit">Send
-                        </button>
-                    </td>
-                </form>                            
-            </tr>
-    
-            <tr>
-                <td>Pizza</td>
-                <td>Karen</td>
-                <td>600</td>
-                <td>2</td>
-                <form method="POST">
-                    <td>
-                        <select>
-                            <option value="accept">ACCEPTED</option>
-                            <option value="reject">REJECTED</option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option value="undone">-----</option>
-                            <option value="complete">COMPLETE</option>
-                        </select>
-                    </td>
-                    <td>
-                        <button class="button_create" type="submit">Send
-                        </button>
-                    </td>
-                </form>  
-            </tr>
+            <tbody id="tbody">
 
-            <tr>
-                <td>Fish</td>
-                <td>Squidward</td>
-                <td>400</td>
-                <td>1</td>
-                <form method="POST">
-                    <td>
-                        <select>
-                            <option value="complete">ACCEPTED</option>
-                            <option value="reject">REJECTED</option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option value="undone">-----</option>
-                            <option value="complete">COMPLETE</option>
-                        </select>
-                    </td>
-                    <td>
-                        <button class="button_create" type="submit">Send
-                        </button>
-                    </td>
-                </form> 
-            </tr>
+            </tbody>
         </table>
         </div>       
     </section>
@@ -193,6 +97,6 @@
             </li>
         </ul>
     </footer>
-    
+    <script src="js/admin_profiler.js"></script>
 </body>
 </html>
