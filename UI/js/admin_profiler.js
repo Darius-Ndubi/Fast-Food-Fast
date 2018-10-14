@@ -85,7 +85,6 @@ function editOrderStatus(){
         method: "PUT",
         mode: "cors",
         headers: {
-            order_id,
             "Content-type" : "application/json",
             "Authorization" : "Bearer " + sessionStorage.getItem("token")
         },
