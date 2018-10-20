@@ -19,15 +19,15 @@ function userlogin(e) {
 	})
     .then(res => [res.json(), res.status])
     .then(res => {
-        if (res[1] == 200){
-            console.log(res[0])
-            Redirect();
+        if (res[1] === 200){
+            //console.log(res[0])
+            redirect();
         }
         res[0].then(res => {
             sessionStorage.setItem('token',res.Token)
             alert(JSON.stringify(res.message))}); 
         });
-};
+}
 
 var sign_in = document
 	.querySelector(".signin")
@@ -35,6 +35,6 @@ var sign_in = document
     .addEventListener("click", userlogin);
     
 // fcuntion to switch user to their profile
-function Redirect() {
+function redirect() {
     window.location="user_profile.html";
     }
