@@ -25,7 +25,7 @@ function userlogin(e) {
         }
         res[0].then(res => {
             sessionStorage.setItem('token',res.Token)
-            alert(JSON.stringify(res.msg))}); 
+            alert(JSON.stringify(res.message))}); 
         });
 }
 

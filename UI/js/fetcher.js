@@ -78,6 +78,6 @@ function createOrder() {
 		body: JSON.stringify(data)
 	})
 	.then(res => res.json())
-	.then(res => alert(JSON.stringify(res.msg)));
+	.then(res => alert(JSON.stringify(res.message)));
 	
 }
