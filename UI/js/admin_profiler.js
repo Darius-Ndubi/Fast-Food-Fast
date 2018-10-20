@@ -93,6 +93,6 @@ function editOrderStatus(){
     .then (res => res.json())
 
     .then (res => {
-        alert(JSON.stringify(res.msg))
+        alert(JSON.stringify(res.message))
     });
 }

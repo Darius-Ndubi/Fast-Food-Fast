@@ -30,7 +30,7 @@ function usersignup(e) {
 			Redirect();
 		}
 		res[0].then(res => {
-			alert(JSON.stringify(res.msg))});
+			alert(JSON.stringify(res.message))});
 	});
 
 }
