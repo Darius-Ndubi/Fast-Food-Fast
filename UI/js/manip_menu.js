@@ -24,6 +24,14 @@ function getMenuItems() {
             edit.onclick = editFoodButton
             td_edit.appendChild(edit);
 
+            // table delete button
+            var to_delete = document.createElement("td");
+            var delete_item = document.createElement("button");
+            delete_item.className='button_delete';
+            delete_item.innerHTML = "Delete";
+            delete_item.onclick = deleteFoodButton
+            to_delete.appendChild(delete_item);
+
             for (var value in item) {
                 var td_data = document.createElement("td");
                 td_data.innerHTML = item[value];
@@ -31,6 +39,7 @@ function getMenuItems() {
             }
             //add edit button to the rows
             tr.appendChild(td_edit);
+            tr.appendChild(to_delete);
 
             t_body.appendChild(tr);
         }
@@ -102,4 +111,31 @@ var edit_food = document
 //function to redirect to food menu
 function redirect(){
     window.location = "view_foods.html";
+}
+
+
+function deleteFoodButton() {
+    var parent = this.parentElement.parentElement;
+    var food_id = parent.firstChild.innerHTML
+
+    //url to api + food_id
+    fetch("https://fastfoodfastapi.herokuapp.com/api/v2/menu/" + food_id,{
+        method: "DELETE",
+		mode: "cors",
+		headers: {
+		  "Content-type": "application/json",
+          "Authorization": "Bearer " + sessionStorage.getItem("token")
+        }
+        })
+        //retrieve response from the server
+        .then(res => [res.json(),res.status])
+        .then(res => {
+            if (res[1] === 200){
+                //reload current window
+                location.reload()
+            }
+            res[0].then(res => {
+                alert(JSON.stringify(res.message))});
+
+        });
 }
