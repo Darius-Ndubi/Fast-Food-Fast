@@ -97,7 +97,7 @@ function editFood(e){
             redirect();
         }
         res[0].then(res => {
-            alert(JSON.stringify(res.message))});
+            alert(JSON.stringify(res.msg))});
         });          
 };
 
@@ -135,7 +135,7 @@ function deleteFoodButton() {
                 location.reload()
             }
             res[0].then(res => {
-                alert(JSON.stringify(res.message))});
+                alert(JSON.stringify(res.msg))});
 
         });
 }

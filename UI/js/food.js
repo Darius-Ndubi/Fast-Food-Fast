@@ -29,7 +29,7 @@ function addMenuItem(e) {
 
     .then(res =>  {
         //show the user some message
-        alert(JSON.stringify(res.message))
+        alert(JSON.stringify(res.msg))
     });
 }
 
