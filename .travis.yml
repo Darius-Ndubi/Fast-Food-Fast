@@ -11,6 +11,8 @@ cache:
 
 before_install:
 - npm update
+- export CHROME_BIN=chromium-browser
+- export DISPLAY=:99.0
 
 install:
 - npm install
