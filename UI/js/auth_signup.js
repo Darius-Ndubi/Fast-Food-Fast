@@ -27,7 +27,7 @@ function usersignup(e) {
 	// The First then returns the body of the response from server.
 	.then(res => [res.json(), res.status]).then(res => {
 		if (res[1] === 201){
-			Redirect();
+			redirect();
 		}
 		res[0].then(res => {
 			alert(JSON.stringify(res.message))});
@@ -35,14 +35,18 @@ function usersignup(e) {
 
 }
   
-var sign_up = document
+document
     // Select the sign up button
     .querySelector(".signup")
     // Add click listener. When the signup button is clicked, usersignup is called
     .addEventListener("click", usersignup);
 
 
-function Redirect() {
+function redirect() {
 	window.location="signin.html";
 	}
 
+
+
+//export functions to be used in tests
+module.export = usersignup;

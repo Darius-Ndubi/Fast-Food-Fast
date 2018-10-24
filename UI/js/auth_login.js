@@ -29,7 +29,7 @@ function userlogin(e) {
         });
 }
 
-var sign_in = document
+document
 	.querySelector(".signin")
 	//   Add click listener. When the signup button is clicked, userlogin is called
     .addEventListener("click", userlogin);

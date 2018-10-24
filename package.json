@@ -1,0 +1,27 @@
+{
+    "scripts": {
+        "test": "jest"
+    },
+    "devDependencies": {
+        "babel-core": "^6.26.3",
+        "babel-jest": "^23.6.0",
+        "babel-preset-env": "^1.7.0",
+        "coveralls": "^3.0.2",
+        "faker": "^4.1.0",
+        "jest": "^23.6.0",
+        "jest-cli": "^23.6.0",
+        "puppeteer": "^1.9.0",
+        "yarn": "^1.10.1"
+    },
+    "jest": {
+        "coverageReporters": [
+            "text",
+            "html"
+        ],
+        "verbose": true,
+        "coverageDirectory": "UI/spec/coverage",
+        "collectCoverageFrom": [
+            "UI/js/*.js"
+        ]
+    }
+}

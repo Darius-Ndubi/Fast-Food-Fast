@@ -33,7 +33,7 @@ function addMenuItem(e) {
     });
 }
 
-var new_food = document
+document
     //select add item button
     .querySelector(".add_food")
     //click listener when the add food is clicked addmenuitem is called
