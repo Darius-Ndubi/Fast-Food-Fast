@@ -23,16 +23,31 @@ function usersignup(e) {
 		},
 	// convert the data to string
 	body: JSON.stringify(data)
-    })
+	})
+	
 	// The First then returns the body of the response from server.
-	.then(res => [res.json(), res.status]).then(res => {
+	.then(res => [res.json(), res.status])
+	.then(res => {
+		//console.log(result);
 		if (res[1] === 201){
-			redirect();
+			res[0].then(res => {
+				alert(JSON.stringify(res.message));
+				redirect();
+			})
 		}
-		res[0].then(res => {
-			alert(JSON.stringify(res.message))});
-	});
-
+		else if (res[1] === 400) {
+			res[0].then(res => {
+				var error_message = document.getElementById("message_error");
+				error_message.innerHTML = res.message
+			})
+		}
+		else if (res[1] === 409) {
+			res[0].then(res => {
+				var error_message = document.getElementById("message_error");
+				error_message.innerHTML = res.message
+			})
+		}
+});
 }
   
 document

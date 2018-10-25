@@ -25,12 +25,39 @@ function addMenuItem(e) {
         body: JSON.stringify(data)
     })
     //   The First then returns the body of the response from server. In this case as a json object
-    .then(res => res.json())
-
-    .then(res =>  {
-        //show the user some message
-        alert(JSON.stringify(res.message))
-    });
+    .then(res => [res.json(), res.status])
+    .then(res => {
+        if (res[1] === 201){
+            res[0].then(res => {
+				alert(JSON.stringify(res.message));
+				redirect();
+		    })
+        }
+        else if (res[1] === 400) {
+			res[0].then(res => {
+				var error_message = document.getElementById("message_error");
+				error_message.innerHTML = res.message
+			})
+        }
+        else if (res[1] === 403) {
+			res[0].then(res => {
+				var error_message = document.getElementById("message_error");
+				error_message.innerHTML = res.message
+			})
+        }
+        else if (res[1] === 409) {
+			res[0].then(res => {
+				var error_message = document.getElementById("message_error");
+				error_message.innerHTML = res.message
+			})
+        }
+        else if (res[1] === 422) {
+            res[0].then(res => {
+              alert("Please login to add item into menu");
+              window.location ="signin.html"
+            })
+        }
+});
 }
 
 document
@@ -38,3 +65,9 @@ document
     .querySelector(".add_food")
     //click listener when the add food is clicked addmenuitem is called
     .addEventListener("click",addMenuItem);
+
+
+function redirect() {
+    window.location="view_foods.html";
+    }
+    

@@ -20,13 +20,25 @@ function userlogin(e) {
     .then(res => [res.json(), res.status])
     .then(res => {
         if (res[1] === 200){
-            //console.log(res[0])
-            redirect();
+            res[0].then(res => {
+				sessionStorage.setItem('token',res.Token)
+				alert(JSON.stringify(res.message));
+				redirect();
+		})
         }
-        res[0].then(res => {
-            sessionStorage.setItem('token',res.Token)
-            alert(JSON.stringify(res.message))}); 
-        });
+        else if (res[1] === 400) {
+			res[0].then(res => {
+				var error_message = document.getElementById("message_error");
+				error_message.innerHTML = res.message
+			})
+		}
+		else if (res[1] === 403) {
+			res[0].then(res => {
+				var error_message = document.getElementById("message_error");
+				error_message.innerHTML = res.message
+			})
+		}
+});
 }
 
 document

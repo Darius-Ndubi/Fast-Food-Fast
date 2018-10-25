@@ -77,7 +77,41 @@ function createOrder() {
 		},
 		body: JSON.stringify(data)
 	})
-	.then(res => res.json())
-	.then(res => alert(JSON.stringify(res.message)));
+  	.then(res => [res.json(),res.status])
+  
+	.then(res => {
+    if (res[1] === 201){
+        res[0].then(res => {
+        alert(JSON.stringify(res.message));
+        redirect();
+    })
+    }
+    else if (res[1] === 400) {
+      res[0].then(res => {
+      var error_message = document.getElementById("message_error1");
+      error_message.innerHTML = res.message
+  	})
+    }
+    else if (res[1] === 403) {
+      res[0].then(res => {
+      var error_message = document.getElementById("message_error1");
+      error_message.innerHTML = res.message
+  	})
+    }
+    else if (res[1] === 422) {
+      res[0].then(res => {
+        alert("Please login to create an order");
+        login_redirect();
+  	})
+	  }
+});
 	
+}
+
+function redirect() {
+    window.location="user_profile.html";
+    }
+
+function login_redirect(){
+  window.location ="signin.html"
 }

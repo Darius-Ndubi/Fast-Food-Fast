@@ -93,12 +93,38 @@ function editFood(e){
     // if the status is 200, redirect to view all foods
     //else show the message in item 0
     .then(res => {
-        if(res[1] === 200){
-            redirect();
+        if (res[1] === 200){
+            res[0].then(res => {
+				alert(JSON.stringify(res.message));
+				redirect();
+		    })
         }
-        res[0].then(res => {
-            alert(JSON.stringify(res.message))});
-        });          
+        else if (res[1] === 400) {
+			res[0].then(res => {
+				var error_message = document.getElementById("message_error");
+				error_message.innerHTML = res.message
+			})
+        }
+        else if (res[1] === 403) {
+			res[0].then(res => {
+				var error_message = document.getElementById("message_error");
+				error_message.innerHTML = res.message
+			})
+        }
+        else if (res[1] === 409) {
+			res[0].then(res => {
+				var error_message = document.getElementById("message_error");
+				error_message.innerHTML = res.message
+			})
+        }
+        else if (res[1] === 422) {
+            res[0].then(res => {
+              alert("Please login to edit menu item");
+              window.location ="signin.html"
+            })
+        }
+        
+});         
 };
 
 var edit_food = document
@@ -131,11 +157,23 @@ function deleteFoodButton() {
         .then(res => [res.json(),res.status])
         .then(res => {
             if (res[1] === 200){
-                //reload current window
-                location.reload()
+                res[0].then(res => {
+                    alert(JSON.stringify(res.message));
+                    //reload current window
+                    location.reload()
+            })
             }
-            res[0].then(res => {
-                alert(JSON.stringify(res.message))});
-
+            else if (res[1] === 403) {
+                res[0].then(res => {
+                    var error_message = document.getElementById("message_error1");
+                    error_message.innerHTML = res.message
+                })
+            }
+            else if (res[1] === 422) {
+                res[0].then(res => {
+                  alert("Please login to delete item from menu");
+                  window.location ="signin.html"
+                })
+            }
         });
 }
