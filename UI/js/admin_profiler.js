@@ -10,61 +10,73 @@ function getUsersHistory() {
             "Authorization":"Bearer " + sessionStorage.getItem("token")
         }
     })
-    .then ( res => res.json())
+    .then (res => [res.json(),res.status])
 
-    .then (data => {
-        //loop over allorders retrieved
-        var options = ["Processing","Cancelled","Complete"];
-        for (var orders of data) {
-            var tr = document.createElement('tr');
-            // table column to edit status
-            var td_action = document.createElement("td");
-            var action = document.createElement("select");
-            action.className = 'action';
-            // admin options on an order
-            var action1 = document.createElement("option");
-            var action2 = document.createElement("option");
-            var action3 = document.createElement("option");
+    .then(res => {
+        if (res[1] === 200){
+            res[0].then(data => {
+            //alert(JSON.stringify(res.message));
+            //redirect();
+            //loop over allorders retrieved
+            //var options = ["Processing","Cancelled","Complete"];
+            for (var orders of data) {
+                var tr = document.createElement('tr');
+                // table column to edit status
+                var td_action = document.createElement("td");
+                var action = document.createElement("select");
+                action.className = 'action';
+                // admin options on an order
+                var action1 = document.createElement("option");
+                var action2 = document.createElement("option");
+                var action3 = document.createElement("option");
 
-            action1.value = "Processing";
-            action1.text = "Processing";
+                action1.value = "Processing";
+                action1.text = "Processing";
 
-            action2.value = "Cancelled";
-            action2.text = "Cancelled";
+                action2.value = "Cancelled";
+                action2.text = "Cancelled";
 
-            action3.value = "Complete";
-            action3.text = "Complete";
-            
-            action.add(action1);
-            action.add(action2);
-            action.add(action3);
+                action3.value = "Complete";
+                action3.text = "Complete";
+                
+                action.add(action1);
+                action.add(action2);
+                action.add(action3);
 
-            //console.log(action)
-            td_action.appendChild(action)
+                //console.log(action)
+                td_action.appendChild(action)
 
-            //table column to hold the button
-            var td_edit = document.createElement("td");
-            var edit  = document.createElement("button");
-            edit.className = "button_create";
-            edit.innerHTML = "Edit"
-            edit.onclick = editOrderStatus
-            td_edit.appendChild(edit);
+                //table column to hold the button
+                var td_edit = document.createElement("td");
+                var edit  = document.createElement("button");
+                edit.className = "button_create";
+                edit.innerHTML = "Edit"
+                edit.onclick = editOrderStatus
+                td_edit.appendChild(edit);
 
-            //loop to find details in eachh order
-            for (var value in orders) {
-                // hold each value inside td tag
-                var user_order = document.createElement("td");
-                user_order.innerHTML = orders[value];
-                tr.appendChild(user_order);
-            }
-            // add the order status optons and order button to each order
-            tr.appendChild(td_action);
-            tr.appendChild(td_edit)
+                //loop to find details in eachh order
+                for (var value in orders) {
+                    // hold each value inside td tag
+                    var user_order = document.createElement("td");
+                    user_order.innerHTML = orders[value];
+                    tr.appendChild(user_order);
+                }
+                // add the order status optons and order button to each order
+                tr.appendChild(td_action);
+                tr.appendChild(td_edit)
 
-            // append each roa data to table bosy
-            t_body.appendChild(tr);
+                // append each roa data to table bosy
+                t_body.appendChild(tr);
+                }
+            })
         }
-    });
+        else if (res[1] === 422) {
+            res[0].then(res => {
+              alert("Please login to create an order");
+              login_redirect();
+            })
+        }
+});
 }
 
 //call the function to retrieve all user data

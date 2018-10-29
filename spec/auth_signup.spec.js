@@ -27,6 +27,12 @@ const userData = [{
     uname:"yagami",
     upassword:"Yagami@12",
     confirm_password:"Yagami@12"
+},
+{
+    email:"ndubiodarius@gmail.com",
+    uname:"yagami",
+    upassword:"Yagami@123",
+    confirm_password:"Yagami@12"
 }]
 
 
@@ -70,11 +76,10 @@ describe("User Sign Up Form", () => {
         await page.click("#cpsswd");
         await page.type("#cpsswd", userData[0].confirm_password);
         await page.click(".signup");
-        //await page.waitForSelector("alert");
-        await page.on("alert",(dialog) =>{
-          dialog.accept();
-          });
-      }, 10000);
+        await page.waitFor(10000);
+        const divcontent = await page.evaluate(() => document.querySelector('#message_error').textContent);
+        expect(divcontent).toEqual('Email is not well formatted (Must have @ and .com) and not contain spaces or #,$,%,^,&,*,!,(,) and :')
+      }, 50000);
 
     test("Test on user signup with random data ", async () => {
       await page.goto(signupUrl);
@@ -92,7 +97,7 @@ describe("User Sign Up Form", () => {
       await page.on("alert",(dialog) =>{
         dialog.accept();
         });
-    }, 10000);
+    }, 50000);
 
     test("Test on user signup with incorrect email", async () => {
         await page.goto(signupUrl);
@@ -107,14 +112,34 @@ describe("User Sign Up Form", () => {
         await page.type("#cpsswd", userData[1].confirm_password);
         await page.click(".signup");
         //await page.waitForSelector("alert");
-        await page.on("alert",(dialog) =>{
-            delay(1000);
-            dialog.accept();
-            delay(1000);
-        });
-      }, 10000);
+        // await page.on("alert",(dialog) =>{
+        //     delay(1000);
+        //     dialog.accept();
+        //     delay(1000);
+        // });
+        await page.waitFor(10000);
+        const divcontent = await page.evaluate(() => document.querySelector('#message_error').textContent);
+        expect(divcontent).toEqual("Email is not well formatted (Must have @ and .com) and not contain spaces or #,$,%,^,&,*,!,(,) and :")
+      }, 50000);
 
-    test("Test on user signup with correct data ", async () => {
+      test("Test on user signup with non matching password", async () => {
+        await page.goto(signupUrl);
+        await page.waitForSelector(".form_content");
+        await page.click("#email");
+        await page.type("#email", userData[3].email);
+        await page.click("#uname");
+        await page.type("#uname", userData[3].uname);
+        await page.click("#psswd");
+        await page.type("#psswd", userData[3].upassword);
+        await page.click("#cpsswd");
+        await page.type("#cpsswd", userData[3].confirm_password);
+        await page.click(".signup");
+        await page.waitFor(10000);
+        const divcontent = await page.evaluate(() => document.querySelector('#message_error').textContent);
+        expect(divcontent).toEqual("Password and confirm password don't match")
+      }, 50000);
+
+      test("Test on user signup with correct data ", async () => {
         await page.goto(signupUrl);
         await page.waitForSelector(".form_content");
         await page.click("#email");
@@ -126,13 +151,10 @@ describe("User Sign Up Form", () => {
         await page.click("#cpsswd");
         await page.type("#cpsswd", userData[2].confirm_password);
         await page.click(".signup");
-        //await page.waitForSelector("alert");
-        await page.on("alert",(dialog) =>{
-            delay(1000);
-            dialog.accept();
-            delay(1000);
-        });
-      }, 10000);
+        await page.waitFor(10000);
+        const divcontent = await page.evaluate(() => document.querySelector('#message_error').textContent);
+        expect(divcontent).toEqual("Sign up request for could not be completed due to existance of same email")
+      }, 50000);
   });
 
 
@@ -141,5 +163,8 @@ describe("User redirect to login page",() =>{
         await page.goto(signupUrl);
         await page.waitForSelector(".more_link");
         await page.click(".more_link");
-    },16000);
+        await page.waitFor(20000);
+        const title = await page.title();
+        expect(title).toBe("Join Us | Sign In");
+    },30000);
 })

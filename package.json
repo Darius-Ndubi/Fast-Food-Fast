@@ -1,6 +1,7 @@
 {
     "scripts": {
-        "test": "jest"
+        "test": "jest",
+        "jest-coverage": "yarn run jest -- --coverage"
     },
     "devDependencies": {
         "babel-core": "^6.26.3",

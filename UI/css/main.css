@@ -327,7 +327,9 @@ body{
     #titling{
         font-size: 14px;
     }
-    
+    #message_error{
+        font-size: 10px; 
+    }
 
 }
 

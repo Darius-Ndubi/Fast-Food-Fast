@@ -38,6 +38,12 @@ function userlogin(e) {
 				error_message.innerHTML = res.message
 			})
 		}
+		else if (res[1] === 401) {
+			res[0].then(res => {
+				var error_message = document.getElementById("message_error");
+				error_message.innerHTML = res.message
+			})
+		}
 });
 }
 

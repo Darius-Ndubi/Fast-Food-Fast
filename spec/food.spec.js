@@ -55,11 +55,11 @@ describe("Menu item creation form", () =>{
         await page.click("#type");
         await page.type("#type", mealData[0].type);
         await page.click(".add_food");
-        //await page.waitForSelector("alert");
+        await page.waitFor(10000);
         await page.on("alert",(dialog) =>{
             dialog.accept();
         });
-    },10000);
+    },20000);
 
     test("Test on user create menu successfully", async () =>{
         await page.goto(menuUrl);
@@ -73,9 +73,9 @@ describe("Menu item creation form", () =>{
         await page.click("#type");
         await page.type("#type", mealData[1].type);
         await page.click(".add_food");
-        //await page.waitForSelector("alert");
+        await page.waitFor(10000);
         await page.on("alert",(dialog) =>{
             dialog.accept();
         });
-    },10000);
+    },20000);
 });
