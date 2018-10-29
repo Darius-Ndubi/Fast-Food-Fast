@@ -331,5 +331,21 @@ body{
         font-size: 10px; 
     }
 
+    .home_image{
+        width: 100%; 
+        height: 100%; 
+        position: fixed; 
+    }
+
+    .welcome_text img{
+        padding-top:100%;
+        margin-top:0%;
+    }
+    
+    .welcome_text p{
+        padding-bottom: 0;
+        height: 100vh;
+    }
+
 }
 

@@ -1,8 +1,5 @@
-# ignore node file
-node_modules/
-
-#ignore coverage file
 coverage/
+node_modules/
+UI/spec
+UI/tests
 
-#ignore package lock gile
-package-lock.json

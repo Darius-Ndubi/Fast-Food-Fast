@@ -1,5 +1,5 @@
 // get all menu items for editing or deletion
-var t_body = document.getElementById("tbody");
+const t_body = document.getElementById("tbody");
 
 // funcyion to get menu item and add the edit buttom to them
 function getMenuItems() {
@@ -14,26 +14,26 @@ function getMenuItems() {
     .then(res => res.json())
 
     .then(data => {
-        for (var item of data) {
-            var tr = document.createElement("tr");
+        for (let item of data) {
+            const tr = document.createElement("tr");
             //table edit button
-            var td_edit = document.createElement("td");
-            var edit = document.createElement("button");
+            let td_edit = document.createElement("td");
+            let edit = document.createElement("button");
             edit.className="button_edit";
             edit.innerHTML = "Edit";
             edit.onclick = editFoodButton
             td_edit.appendChild(edit);
 
             // table delete button
-            var to_delete = document.createElement("td");
-            var delete_item = document.createElement("button");
+            let to_delete = document.createElement("td");
+            let delete_item = document.createElement("button");
             delete_item.className='button_delete';
             delete_item.innerHTML = "Delete";
             delete_item.onclick = deleteFoodButton
             to_delete.appendChild(delete_item);
 
-            for (var value in item) {
-                var td_data = document.createElement("td");
+            for (let value in item) {
+                let td_data = document.createElement("td");
                 td_data.innerHTML = item[value];
                 tr.appendChild(td_data);
             }
@@ -50,8 +50,8 @@ getMenuItems();
 
 // function to collect food id and load edit_food page
 function editFoodButton(e) {
-    var parent = this.parentElement.parentElement;
-    var food_id = parent.firstChild.innerHTML
+    let parent = this.parentElement.parentElement;
+    let food_id = parent.firstChild.innerHTML
 
     //store food id in session for more use
     sessionStorage.setItem('food_id',food_id)
@@ -64,13 +64,13 @@ function editFoodButton(e) {
 function editFood(e){
     // prevent window from reloading
     e.preventDefault(); 
-    var title = document.getElementById("title").value;
-    var descri = document.getElementById("descri").value;
-    var price = Number(document.getElementById("price").value);
-    var type = document.getElementById("type").value;
+    let title = document.getElementById("title").value;
+    let descri = document.getElementById("descri").value;
+    let price = Number(document.getElementById("price").value);
+    let type = document.getElementById("type").value;
     food_id = sessionStorage.getItem("food_id")
     
-    var data = {
+    const data = {
         title:title,
         description:descri,
         price:price,
@@ -101,19 +101,19 @@ function editFood(e){
         }
         else if (res[1] === 400) {
 			res[0].then(res => {
-				var error_message = document.getElementById("message_error");
+				let error_message = document.getElementById("message_error");
 				error_message.innerHTML = res.message
 			})
         }
         else if (res[1] === 403) {
 			res[0].then(res => {
-				var error_message = document.getElementById("message_error");
+				let error_message = document.getElementById("message_error");
 				error_message.innerHTML = res.message
 			})
         }
         else if (res[1] === 409) {
 			res[0].then(res => {
-				var error_message = document.getElementById("message_error");
+				let error_message = document.getElementById("message_error");
 				error_message.innerHTML = res.message
 			})
         }
@@ -127,7 +127,7 @@ function editFood(e){
 });         
 };
 
-var edit_food = document
+document
     //select edit button
     .querySelector(".button_create")
     //click listners when the edit food button is clicked
@@ -141,8 +141,8 @@ function redirect(){
 
 
 function deleteFoodButton() {
-    var parent = this.parentElement.parentElement;
-    var food_id = parent.firstChild.innerHTML
+    let parent = this.parentElement.parentElement;
+    let food_id = parent.firstChild.innerHTML
 
     //url to api + food_id
     fetch("https://fastfoodfastapi.herokuapp.com/api/v2/menu/" + food_id,{
@@ -165,7 +165,7 @@ function deleteFoodButton() {
             }
             else if (res[1] === 403) {
                 res[0].then(res => {
-                    var error_message = document.getElementById("message_error1");
+                    let error_message = document.getElementById("message_error1");
                     error_message.innerHTML = res.message
                 })
             }

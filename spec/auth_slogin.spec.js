@@ -114,16 +114,16 @@ describe("Testing the page redirections", () => {
 
     test("Test load reset password page", async () => {
         await page.goto(signinUrl);
-        await page.waitForSelector(".more_link");
+        //await page.waitForSelector(".more_link");
         await page.click(".more_link");
-        await page.waitFor(50000);
+        await page.waitFor(20000);
         const title = await page.title();
         expect(title).toBe("Reset Password");
-    },70000);
+    },30000);
 
     test("Test redirect to signup  password page", async () => {
         await page.goto(signinUrl);
-        await page.waitForSelector(".more_link");
+        //await page.waitForSelector(".more_link");
         await page.click(".signup");
         await page.waitFor(20000);
         const title = await page.title();

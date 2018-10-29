@@ -1,4 +1,4 @@
-var t_body = document.getElementById("tbody")
+const t_body = document.getElementById("tbody")
 
 // fucntion to get all  users orders
 function getUsersHistory() {
@@ -18,17 +18,17 @@ function getUsersHistory() {
             //alert(JSON.stringify(res.message));
             //redirect();
             //loop over allorders retrieved
-            //var options = ["Processing","Cancelled","Complete"];
-            for (var orders of data) {
-                var tr = document.createElement('tr');
+            //let options = ["Processing","Cancelled","Complete"];
+            for (let orders of data) {
+                const tr = document.createElement('tr');
                 // table column to edit status
-                var td_action = document.createElement("td");
-                var action = document.createElement("select");
+                let td_action = document.createElement("td");
+                let action = document.createElement("select");
                 action.className = 'action';
                 // admin options on an order
-                var action1 = document.createElement("option");
-                var action2 = document.createElement("option");
-                var action3 = document.createElement("option");
+                const action1 = document.createElement("option");
+                const action2 = document.createElement("option");
+                const action3 = document.createElement("option");
 
                 action1.value = "Processing";
                 action1.text = "Processing";
@@ -47,17 +47,17 @@ function getUsersHistory() {
                 td_action.appendChild(action)
 
                 //table column to hold the button
-                var td_edit = document.createElement("td");
-                var edit  = document.createElement("button");
+                let td_edit = document.createElement("td");
+                let edit  = document.createElement("button");
                 edit.className = "button_create";
                 edit.innerHTML = "Edit"
                 edit.onclick = editOrderStatus
                 td_edit.appendChild(edit);
 
                 //loop to find details in eachh order
-                for (var value in orders) {
+                for (let value in orders) {
                     // hold each value inside td tag
-                    var user_order = document.createElement("td");
+                    let user_order = document.createElement("td");
                     user_order.innerHTML = orders[value];
                     tr.appendChild(user_order);
                 }
@@ -72,8 +72,8 @@ function getUsersHistory() {
         }
         else if (res[1] === 422) {
             res[0].then(res => {
-              alert("Please login to create an order");
-              login_redirect();
+              alert("Please login to access this");
+              window.location ="signin.html"
             })
         }
 });
@@ -84,12 +84,12 @@ getUsersHistory();
 
 //function to edit status on click of edit button on admin profile
 function editOrderStatus(){
-    var parent = this.parentElement.parentElement;
-    var order_id = parent.firstChild.innerHTML
-    var status =  parent.getElementsByClassName('action')[0].value
+    let parent = this.parentElement.parentElement;
+    let order_id = parent.firstChild.innerHTML
+    let status =  parent.getElementsByClassName('action')[0].value
 
     // create an object to hold the data
-    var data = {
+    const data = {
         status: status
     };
     //url to api
@@ -106,5 +106,6 @@ function editOrderStatus(){
 
     .then (res => {
         alert(JSON.stringify(res.message))
+        location.reload()
     });
 }

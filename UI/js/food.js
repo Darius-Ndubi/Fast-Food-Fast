@@ -1,11 +1,11 @@
 function addMenuItem(e) {
     e.preventDefault(); 
-    var title = document.getElementById("title").value;
-    var descri = document.getElementById("descri").value;
-    var price = Number(document.getElementById("price").value);
-    var type = document.getElementById("type").value;
+    let title = document.getElementById("title").value;
+    let descri = document.getElementById("descri").value;
+    let price = Number(document.getElementById("price").value);
+    let type = document.getElementById("type").value;
 
-    var data = {
+    const data = {
         title:title,
         description:descri,
         price:price,
@@ -35,19 +35,25 @@ function addMenuItem(e) {
         }
         else if (res[1] === 400) {
 			res[0].then(res => {
-				var error_message = document.getElementById("message_error");
+				let error_message = document.getElementById("message_error");
 				error_message.innerHTML = res.message
+			})
+        }
+        else if (res[1] === 401) {
+			res[0].then(res => {
+                alert("Please login to create food item");
+                window.location ="signin.html"
 			})
         }
         else if (res[1] === 403) {
 			res[0].then(res => {
-				var error_message = document.getElementById("message_error");
+				let error_message = document.getElementById("message_error");
 				error_message.innerHTML = res.message
 			})
         }
         else if (res[1] === 409) {
 			res[0].then(res => {
-				var error_message = document.getElementById("message_error");
+				let error_message = document.getElementById("message_error");
 				error_message.innerHTML = res.message
 			})
         }

@@ -1,7 +1,8 @@
 {
     "scripts": {
         "test": "jest",
-        "jest-coverage": "yarn run jest -- --coverage"
+        "jest-coverage": "yarn run jest -- --coverage",
+        "coveralls": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls"
     },
     "devDependencies": {
         "babel-core": "^6.26.3",
@@ -12,7 +13,7 @@
         "jest": "^23.6.0",
         "jest-cli": "^23.6.0",
         "puppeteer": "^1.9.0",
-        "yarn": "^1.10.1"
+        "yarn": "^1.12.1"
     },
     "jest": {
         "coverageReporters": [
@@ -24,5 +25,9 @@
         "collectCoverageFrom": [
             "UI/js/*.js"
         ]
-    }
+    },
+    "dependencies": {
+        "puppeteer-to-istanbul": "^1.2.2"
+    },
+        "preset": "jest-puppeteer"
 }

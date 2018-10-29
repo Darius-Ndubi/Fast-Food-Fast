@@ -42,10 +42,10 @@ describe("Testing user history table filling", () => {
 
     test("Check if your orders title exists befoore history table", async () => {
         await page.goto(userProfUrl);
-        await page.waitFor(10000);
+        await page.waitFor(20000);
         const h2_content = await page.evaluate(() => document.querySelector('#titling').textContent);
         expect(h2_content).toBe("Your Orders");
-    },16000);
+    },30000);
     
     test("Check existance of create order button", async () => {
         await page.goto(userProfUrl);
@@ -55,7 +55,7 @@ describe("Testing user history table filling", () => {
 
     test("Check that users history is correctly loaded", async () => {
         await page.goto(userProfUrl);
-        await page.click("#signout");
+        await page.click("#leave");
         await page.waitForSelector(".form_content");
         await page.click("#email");
         await page.type("#email", userData.email);

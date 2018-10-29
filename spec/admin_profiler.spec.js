@@ -41,10 +41,10 @@ describe("Testing order history table filling", () => {
 
     test("Check if your orders title exists before history table", async () => {
         await page.goto(userProfUrl);
-        await page.waitFor(10000);
+        await page.waitFor(20000);
         const h2_content = await page.evaluate(() => document.querySelector('#titling').textContent);
         expect(h2_content).toBe("Customer Orders");
-    },30000);
+    },50000);
 
     test("Check existance of add food button", async () => {
         await page.goto(userProfUrl);

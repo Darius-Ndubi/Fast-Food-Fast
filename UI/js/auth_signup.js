@@ -2,13 +2,13 @@
 function usersignup(e) {
     e.preventDefault();
     //take data from the signup form
-    var email = document.getElementById("email").value;
-    var username = document.getElementById("uname").value;
-    var password = document.getElementById("psswd").value;
-    var confirm_password = document.getElementById("cpsswd").value;
+    let email = document.getElementById("email").value;
+    let username = document.getElementById("uname").value;
+    let password = document.getElementById("psswd").value;
+    let confirm_password = document.getElementById("cpsswd").value;
   
     // object to hold use data
-    var data = {
+	const data = {
 		email: email,
 		username: username,
 		password: password,
@@ -37,13 +37,13 @@ function usersignup(e) {
 		}
 		else if (res[1] === 400) {
 			res[0].then(res => {
-				var error_message = document.getElementById("message_error");
+				let error_message = document.getElementById("message_error");
 				error_message.innerHTML = res.message
 			})
 		}
 		else if (res[1] === 409) {
 			res[0].then(res => {
-				var error_message = document.getElementById("message_error");
+				let error_message = document.getElementById("message_error");
 				error_message.innerHTML = res.message
 			})
 		}
@@ -64,4 +64,4 @@ function redirect() {
 
 
 //export functions to be used in tests
-module.export = usersignup;
+//module.export = usersignup;

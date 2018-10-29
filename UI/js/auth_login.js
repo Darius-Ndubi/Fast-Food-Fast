@@ -1,10 +1,10 @@
 // function to handel user login
 function userlogin(e) {
 	e.preventDefault();
-	var email = document.getElementById("email").value;
-	var password = document.getElementById("psswd").value;
+	let email = document.getElementById("email").value;
+	let password = document.getElementById("psswd").value;
 
-	var data = {
+	const data = {
 	email: email,
 	password: password
 	};
@@ -28,19 +28,19 @@ function userlogin(e) {
         }
         else if (res[1] === 400) {
 			res[0].then(res => {
-				var error_message = document.getElementById("message_error");
+				let error_message = document.getElementById("message_error");
 				error_message.innerHTML = res.message
 			})
 		}
 		else if (res[1] === 403) {
 			res[0].then(res => {
-				var error_message = document.getElementById("message_error");
+				let error_message = document.getElementById("message_error");
 				error_message.innerHTML = res.message
 			})
 		}
 		else if (res[1] === 401) {
 			res[0].then(res => {
-				var error_message = document.getElementById("message_error");
+				let error_message = document.getElementById("message_error");
 				error_message.innerHTML = res.message
 			})
 		}
