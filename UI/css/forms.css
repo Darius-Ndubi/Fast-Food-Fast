@@ -5,13 +5,13 @@
 
 .form_content{
     width: 100%;
-    margin: 60px auto;
+    margin: 30px auto;
     font: bold 14px ;
     text-align: center;
-
 }
 
 .register{
+    width: 50%;
     position: relative;
     display: inline-block;
     text-align: left;
@@ -19,14 +19,14 @@
 }
 
 .avatar{
-    width: 30%;
-    height: 30%;
+    width: 25%;
+    height: 25%;
     margin-left: 40%;
 
 }
 
 .register .white_box{
-    width: 60%;
+    width: 100%;
     color: #ffffff;
     background: rgba(26, 25, 25, 0.527);
     box-sizing: border-box;
@@ -115,10 +115,11 @@
 
 .user_dits{
     text-align: center;
+    
 }
 
 .user_dits label{
-    display:inline-block;
+    display: block;
     margin: 8px 70px;
 }
 
