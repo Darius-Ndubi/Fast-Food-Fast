@@ -70,6 +70,11 @@ function getUsersHistory() {
                 }
             })
         }
+        else if (res[1] === 401) {
+            alert("Please login to access this");
+            window.location ="signin.html"
+        }
+        
         else if (res[1] === 422) {
             res[0].then(res => {
               alert("Please login to access this");

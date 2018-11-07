@@ -1,7 +1,8 @@
 const faker = require('faker')
 const puppeteer = require('puppeteer')
 
-const signupUrl = "file:///home/dario/Documents/prac/Fast-Food-Fast/UI/signup.html";
+const signupUrl = "file:///Users/ke-c02sgb80fvh3/Documents/FinishUp/Fast-Food-Fast/UI/signup.html";
+
 
 const fakeUser = {
     email: faker.internet.email(),

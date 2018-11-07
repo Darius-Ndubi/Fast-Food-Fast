@@ -38,8 +38,8 @@ function getUserHistory() {
             window.location ="signin.html"
         }
         else if (res[1] === 401) {
-                alert("Please login to access this");
-                window.location ="signin.html"
+            alert("Please login to access this");
+            window.location ="signin.html"
             }
     });
 }

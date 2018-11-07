@@ -20,7 +20,7 @@ function userLogout(){
         else if (res[1] === 401) {
             res[0].then(res => {
               alert("You are not logged in");
-              login_redirect();
+              lwindow.location ="signin.html"
             })
         }
         else if (res[1] === 422) {
