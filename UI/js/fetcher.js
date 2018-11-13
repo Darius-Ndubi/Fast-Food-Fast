@@ -13,6 +13,7 @@ function getMenu(e) {
     .then(data => {
       // Loop over items in data
       for (let item of data) {
+        const brk = document.createElement("br");
         const tr = document.createElement("tr");
         // table data for quantity
         let td_quantity = document.createElement("td");
@@ -40,13 +41,15 @@ function getMenu(e) {
         // Add quantity and action to row
         tr.appendChild(td_quantity);
         tr.appendChild(td_action);
-
+        t_body.appendChild(brk);
         t_body.appendChild(tr);
       }
     });
 }
 
-getMenu();
+getMenu()
+
+//
 
 // function to create an order on the click of the order button
 function createOrder() {
@@ -120,4 +123,31 @@ function redirect() {
 
 function login_redirect(){
   window.location ="signin.html"
+}
+
+// function to help locate food item
+function quickSearch(){
+  let userQuery = document.getElementById("menuSearch").value;
+  let actualQuery = userQuery.toUpperCase();
+
+//   console.log(actualQuery);
+
+  let menuTable = document.getElementById("tbody");
+  let menuItem = menuTable.getElementsByTagName("tr");
+  for (let i = 0; i < menuItem.length; i++){
+    let title = menuItem[i].getElementsByTagName("td")[2];
+    if (title) {
+      if (title.innerHTML.toUpperCase().indexOf(actualQuery) > -1) {
+        menuItem[i].style.display = "";
+      } else {
+        menuItem[i].style.display = "none";
+      }
+    }
+  }
+}
+
+
+// fucntion to help in paginations
+function chop() {
+  
 }

@@ -17,6 +17,7 @@ function getMenuItems() {
         for (let item of data) {
             const tr = document.createElement("tr");
             //table edit button
+            const brk = document.createElement("br");
             let td_edit = document.createElement("td");
             let edit = document.createElement("button");
             edit.className="button_edit";
@@ -40,7 +41,7 @@ function getMenuItems() {
             //add edit button to the rows
             tr.appendChild(td_edit);
             tr.appendChild(to_delete);
-
+            t_body.appendChild(brk);
             t_body.appendChild(tr);
         }
     });
@@ -64,6 +65,7 @@ function editFoodButton(e) {
 function editFood(e){
     // prevent window from reloading
     e.preventDefault(); 
+    let imageData = document.getElementById("itemImage").value;
     let title = document.getElementById("title").value;
     let descri = document.getElementById("descri").value;
     let price = Number(document.getElementById("price").value);
@@ -71,6 +73,7 @@ function editFood(e){
     food_id = sessionStorage.getItem("food_id")
     
     const data = {
+        image:imageData,
         title:title,
         description:descri,
         price:price,

@@ -22,6 +22,7 @@ function getUsersHistory() {
             for (let orders of data) {
                 const tr = document.createElement('tr');
                 // table column to edit status
+                const brk = document.createElement("br");
                 let td_action = document.createElement("td");
                 let action = document.createElement("select");
                 action.className = 'action';
@@ -64,7 +65,7 @@ function getUsersHistory() {
                 // add the order status optons and order button to each order
                 tr.appendChild(td_action);
                 tr.appendChild(td_edit)
-
+                t_body.appendChild(brk);
                 // append each roa data to table bosy
                 t_body.appendChild(tr);
                 }

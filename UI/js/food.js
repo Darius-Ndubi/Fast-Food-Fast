@@ -1,11 +1,16 @@
 function addMenuItem(e) {
     e.preventDefault(); 
+    let imageData = document.getElementById("itemImage").value;
     let title = document.getElementById("title").value;
     let descri = document.getElementById("descri").value;
     let price = Number(document.getElementById("price").value);
     let type = document.getElementById("type").value;
 
+    console.log(imageData);
+
+    // console.log(itemImage);
     const data = {
+        image:imageData,
         title:title,
         description:descri,
         price:price,
@@ -76,4 +81,3 @@ document
 function redirect() {
     window.location="view_foods.html";
     }
-    

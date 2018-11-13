@@ -27,7 +27,10 @@
     ]
   },
   "dependencies": {
-    "puppeteer-to-istanbul": "^1.2.2"
+    "dom-to-image": "^2.6.0",
+    "file-system": "^2.2.2",
+    "puppeteer-to-istanbul": "^1.2.2",
+    "require": "^2.4.20"
   },
   "preset": "jest-puppeteer",
   "name": "fast-food-fast",

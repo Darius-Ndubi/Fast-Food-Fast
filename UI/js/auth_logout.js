@@ -19,8 +19,8 @@ function userLogout(){
         }
         else if (res[1] === 401) {
             res[0].then(res => {
-              alert("You are not logged in");
-              lwindow.location ="signin.html"
+            alert("You are not logged in");
+            window.location ="signin.html"
             })
         }
         else if (res[1] === 422) {
