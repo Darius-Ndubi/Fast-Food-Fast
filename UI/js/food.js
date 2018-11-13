@@ -1,11 +1,16 @@
 function addMenuItem(e) {
     e.preventDefault(); 
-    var title = document.getElementById("title").value;
-    var descri = document.getElementById("descri").value;
-    var price = Number(document.getElementById("price").value);
-    var type = document.getElementById("type").value;
+    let imageData = document.getElementById("itemImage").value;
+    let title = document.getElementById("title").value;
+    let descri = document.getElementById("descri").value;
+    let price = Number(document.getElementById("price").value);
+    let type = document.getElementById("type").value;
 
-    var data = {
+    console.log(imageData);
+
+    // console.log(itemImage);
+    const data = {
+        image:imageData,
         title:title,
         description:descri,
         price:price,
@@ -25,16 +30,54 @@ function addMenuItem(e) {
         body: JSON.stringify(data)
     })
     //   The First then returns the body of the response from server. In this case as a json object
-    .then(res => res.json())
-
-    .then(res =>  {
-        //show the user some message
-        alert(JSON.stringify(res.message))
-    });
+    .then(res => [res.json(), res.status])
+    .then(res => {
+        if (res[1] === 201){
+            res[0].then(res => {
+				alert(JSON.stringify(res.message));
+				redirect();
+		    })
+        }
+        else if (res[1] === 400) {
+			res[0].then(res => {
+				let error_message = document.getElementById("message_error");
+				error_message.innerHTML = res.message
+			})
+        }
+        else if (res[1] === 401) {
+			res[0].then(res => {
+                alert("Please login to create food item");
+                window.location ="signin.html"
+			})
+        }
+        else if (res[1] === 403) {
+			res[0].then(res => {
+				let error_message = document.getElementById("message_error");
+				error_message.innerHTML = res.message
+			})
+        }
+        else if (res[1] === 409) {
+			res[0].then(res => {
+				let error_message = document.getElementById("message_error");
+				error_message.innerHTML = res.message
+			})
+        }
+        else if (res[1] === 422) {
+            res[0].then(res => {
+              alert("Please login to add item into menu");
+              window.location ="signin.html"
+            })
+        }
+});
 }
 
-var new_food = document
+document
     //select add item button
     .querySelector(".add_food")
     //click listener when the add food is clicked addmenuitem is called
     .addEventListener("click",addMenuItem);
+
+
+function redirect() {
+    window.location="view_foods.html";
+    }

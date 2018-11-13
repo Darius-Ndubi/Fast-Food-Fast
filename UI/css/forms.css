@@ -54,6 +54,9 @@
     margin-bottom: 15px;
 
 }
+.register #image{
+    color:#fff;
+}
 /* center place holder text in the forms */
 ::-webkit-input-placeholder {
    text-align: center;

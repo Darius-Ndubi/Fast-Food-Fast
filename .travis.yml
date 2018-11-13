@@ -1,0 +1,30 @@
+sudo: required
+
+language: node_js
+
+node_js:
+  - '10'
+
+addons:
+  chrome: stable
+  hostname: localhost
+
+cache:
+  directories:
+  - node_modules
+
+before_install:
+- export CHROME_BIN=chromium-browser
+- export DISPLAY=:99.0
+
+install:
+# - apt install nodejs
+# - apt-get install chromium-browser
+- npm update
+- npm i Faker
+- npm i puppeteer
+- npm install --save-dev jest
+
+script:
+- npm test
+- npx jest --coverage

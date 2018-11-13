@@ -5,7 +5,7 @@ table{
     text-align: center;
     margin-bottom: 30px;
     font-size:15px;
-    padding-top: 5%;
+    padding-top: 3%;
     width:70%;
     margin-left:auto; 
     margin-right:auto;
@@ -39,6 +39,33 @@ table tr td img{
     height: 100px;
     width: 100px;
 }
+
+#menuSearch {
+    color:  #fff;
+    background-color: #000;
+    width: 40%;
+    height: 10%;
+    margin-left: 53%;
+    box-sizing: border-box;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.1);
+    padding: 12px 18px;
+    border: 1px solid #f78d02;
+    font-size: 16px;
+    margin-bottom: -40%;
+}
+
+#paginater{
+    margin-top:10%;
+    align-content: center;
+    margin-left: 35%;
+    /* padding: 0 0.5%; */
+    margin-bottom:-2%;
+}
+
+#paginater a{
+    margin: 0 4%;
+}
+
 
 /*using media queries to make the page responsive*/
 /* Tablet Landscape */

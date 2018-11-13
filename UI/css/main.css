@@ -96,9 +96,12 @@ body{
 }
 /* button inside the page navbar */
 .button_info{
-    border: 1px;
+    border: 1px solid #f78d02;
     border-radius:5px;
-    margin-right:8px;
+    padding:8px;
+    text-decoration: none;
+    color:  #fff;
+    background-color: #000;
 
 }
 .button_info:hover{
@@ -107,6 +110,11 @@ body{
     height: 40px;
     width: 150px;
     background:rgb(243, 129, 23);
+    text-decoration: none;
+}
+.button_info a:visited{
+    color: #fff;
+    background:transparent;
 }
 
 .button_user:hover{
@@ -212,7 +220,7 @@ body{
 /*end of buttons */
 #titling{
     color:#ffffff;
-    margin-bottom:-5%;
+    margin-bottom:.25%;
     margin-left:-50%; 
     padding:5px;
     font-size:32px;
@@ -270,6 +278,25 @@ body{
     margin:2%;
 }
 
+#message_error{
+    font-size: 20px;
+    color: rgb(255, 0, 0);
+    font-weight: 600;
+    font-family: fantasy;
+    font-style: italic;
+    text-shadow: 0.75px 0.3px #ffffff;
+
+}
+#message_error1{
+    font-size: 20px;
+    color: rgb(255, 0, 0);
+    font-weight: 600;
+    margin-left: 30%;
+    font-family: fantasy;
+    font-style: italic;
+    text-shadow: 0.75px 0.3px #ffffff;
+
+}
 
 /*using media queries to make the page responsive*/
 /* Tablet Landscape */
@@ -308,7 +335,25 @@ body{
     #titling{
         font-size: 14px;
     }
+    #message_error{
+        font-size: 10px; 
+    }
+
+    .home_image{
+        width: 100%; 
+        height: 100%; 
+        position: fixed; 
+    }
+
+    .welcome_text img{
+        padding-top:100%;
+        margin-top:0%;
+    }
     
+    .welcome_text p{
+        padding-bottom: 0;
+        height: 100vh;
+    }
 
 }
 

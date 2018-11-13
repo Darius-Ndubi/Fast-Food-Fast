@@ -1,0 +1,7 @@
+coverage/
+node_modules/
+UI/spec
+UI/tests
+
+yarn.lock
+.DS_Store

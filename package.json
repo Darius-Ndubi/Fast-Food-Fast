@@ -1,0 +1,54 @@
+{
+  "scripts": {
+    "test": "jest",
+    "jest-coverage": "yarn run jest -- --coverage",
+    "coveralls": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
+    "babel-preset-env": "^1.7.0",
+    "coveralls": "^3.0.2",
+    "faker": "^4.1.0",
+    "jest": "^23.6.0",
+    "jest-cli": "^23.6.0",
+    "puppeteer": "^1.10.0",
+    "yarn": "^1.12.1"
+  },
+  "jest": {
+    "coverageReporters": [
+      "text",
+      "html"
+    ],
+    "verbose": true,
+    "coverageDirectory": "UI/spec/coverage",
+    "collectCoverageFrom": [
+      "UI/js/*.js"
+    ]
+  },
+  "dependencies": {
+    "dom-to-image": "^2.6.0",
+    "file-system": "^2.2.2",
+    "puppeteer-to-istanbul": "^1.2.2",
+    "require": "^2.4.20"
+  },
+  "preset": "jest-puppeteer",
+  "name": "fast-food-fast",
+  "description": "<!-- < img src=\"./UI/images/res.png\" align=\"center\" title=\"Applications Logo\" width=\"200\" height=\"200\"> --> ![Logo of the project](./UI/images/res1.png)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Darius-Ndubi/Fast-Food-Fast.git"
+  },
+  "keywords": [
+    "Application",
+    "test"
+  ],
+  "author": "Darius Ndubi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Darius-Ndubi/Fast-Food-Fast/issues"
+  },
+  "homepage": "https://github.com/Darius-Ndubi/Fast-Food-Fast#readme"
+}

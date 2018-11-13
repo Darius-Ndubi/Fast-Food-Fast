@@ -2,13 +2,13 @@
 function usersignup(e) {
     e.preventDefault();
     //take data from the signup form
-    var email = document.getElementById("email").value;
-    var username = document.getElementById("uname").value;
-    var password = document.getElementById("psswd").value;
-    var confirm_password = document.getElementById("cpsswd").value;
+    let email = document.getElementById("email").value;
+    let username = document.getElementById("uname").value;
+    let password = document.getElementById("psswd").value;
+    let confirm_password = document.getElementById("cpsswd").value;
   
     // object to hold use data
-    var data = {
+	const data = {
 		email: email,
 		username: username,
 		password: password,
@@ -23,26 +23,45 @@ function usersignup(e) {
 		},
 	// convert the data to string
 	body: JSON.stringify(data)
-    })
+	})
+	
 	// The First then returns the body of the response from server.
-	.then(res => [res.json(), res.status]).then(res => {
+	.then(res => [res.json(), res.status])
+	.then(res => {
+		//console.log(result);
 		if (res[1] === 201){
-			Redirect();
+			res[0].then(res => {
+				alert(JSON.stringify(res.message));
+				redirect();
+			})
 		}
-		res[0].then(res => {
-			alert(JSON.stringify(res.message))});
-	});
-
+		else if (res[1] === 400) {
+			res[0].then(res => {
+				let error_message = document.getElementById("message_error");
+				error_message.innerHTML = res.message
+			})
+		}
+		else if (res[1] === 409) {
+			res[0].then(res => {
+				let error_message = document.getElementById("message_error");
+				error_message.innerHTML = res.message
+			})
+		}
+});
 }
   
-var sign_up = document
+document
     // Select the sign up button
     .querySelector(".signup")
     // Add click listener. When the signup button is clicked, usersignup is called
     .addEventListener("click", usersignup);
 
 
-function Redirect() {
+function redirect() {
 	window.location="signin.html";
 	}
 
+
+
+//export functions to be used in tests
+//module.export = usersignup;

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Foods</title>
+    <title>Order Food Item | Foods</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta name="HandheldFriendly" content="true">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
@@ -28,35 +28,46 @@
                 <a href="user_profile.html">
                     PROFILE
                 </a>
-                <a id="leave">
+                <a href="signin.html">
                     SIGN OUT
                 </a>
             </ul>
         </nav>
     </header>
-    <section class="all_content" >
-        <div id="message_error1"></div>
-        <input type="text" id="menuSearch" placeholder="Looking for ...." onkeyup="quickSearch()">
-        <table>
-            <tr>
-                <th>Id</th>
-                <th>Picture</th>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>Type</th>
-                <th>Quantity</th>
-                <th>Action</th>
-            </tr>
-            <tbody id="tbody">
+    <section class="all_content">
+    
+        <form class="form_content" action="" method="POST">
+            <div class="register">
+                
+                <div class="white_box">
+                    <h1>Order Food item</h1>
+                    <div class="user_dits">
+                        <div id="message_error"></div>
+                        
+                        <label>Title</label>
+                        <p id="#food_title"></p>
+                    
+                        <label>Description</label>
+                        <p id="#food_title"></p>
+                        
+                        <label>Price:</label>
+                        <p id="#food_price"></p>
+                        
 
-            </tbody>
-        </table>
-        <div id=paginater>
-            <a href="" class="button_info">Previous</a>
-            <a href="" class="button_info">Current </a>
-            <a href="" class="button_info">Next</a>
-        </div>
+                        <label>Type</label>
+                        <p id="#food_type"></p>
+
+                        <label>Quantity:</label>
+                        <input id='food_quantity' type="number" size="6" name="quantity" required min="1" max="" value="0">
+                        <br>
+                        <br>
+                        <br>
+                        <!-- <a href="view_foods.html" class="button_create">Add Item</a> -->
+                        <button class="add_food button_create" type="submit">Order Food</button>
+                    </div>
+                </div>
+            </div>
+        </form>
     </section>
 
     <!--page Footer-->
@@ -72,6 +83,5 @@
         </footer>
         
     <script src="js/fetcher.js"></script>
-    <script src="js/auth_logout.js"></script>
 </body>
 </html>
